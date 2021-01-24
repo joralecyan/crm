@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-group form-group-feedback form-group-feedback-left">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="{{__('Full Name')}}">
+                    <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="{{__('Full Name')}}">
                     <div class="form-control-feedback">
                         <i class="icon-user-check text-muted"></i>
                     </div>
@@ -29,7 +29,7 @@
 
 
                 <div class="form-group form-group-feedback form-group-feedback-left">
-                    <input type="email" name="email" id="email" class="form-control" placeholder="{{__('E-Mail Address')}}">
+                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}" placeholder="{{__('E-Mail Address')}}">
                     <div class="form-control-feedback">
                         <i class="icon-mention text-muted"></i>
                     </div>
