@@ -84,6 +84,12 @@
                         <span>{{__('Employees')}}</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('positions.index')}}" class="nav-link @if(request()->is('positions*')) active @endif">
+                        <i class="icon-briefcase"></i>
+                        <span>{{__('Positions')}}</span>
+                    </a>
+                </li>
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-cog"></i> <span>{{__('Settings')}}</span></a>
 

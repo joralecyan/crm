@@ -14,6 +14,7 @@ class User extends Authenticatable
     use Sortable, HasFactory, Notifiable;
 
     const STATUS_ACTIVE = 'active';
+    const STATUS_INACTIVE = 'inactive';
     const ROLE_USER = 'user';
     const ROLE_ADMIN = 'admin';
 
@@ -25,6 +26,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
         'role',
         'position_id',

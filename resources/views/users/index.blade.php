@@ -34,6 +34,7 @@
                                 <th>{{__('Email')}}</th>
                                 <th>{{__('Phone')}}</th>
                                 <th>{{__('Position')}}</th>
+                                <th>{{__('Status')}}</th>
                                 <th>{{__('Created at')}}</th>
                                 <th>{{__('Actions')}}</th>
                             </tr>
@@ -46,6 +47,7 @@
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->phone}}</td>
                                 <td>{{$user->position->name ?? ''}}</td>
+                                <td>{{__(ucfirst($user->status))}}</td>
                                 <td>{{$user->created_at->format('d M Y')}}</td>
                                 <td>
                                     <div class="list-icons">

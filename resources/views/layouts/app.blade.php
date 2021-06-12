@@ -17,6 +17,7 @@
     <link href="/css/layout.min.css" rel="stylesheet" type="text/css">
     <link href="/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/toastr.min.css" rel="stylesheet">
     <!-- /global stylesheets -->
     @yield('head')
     <!-- Core JS files -->
@@ -24,6 +25,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/blockui.min.js"></script>
     <script src="/js/ripple.min.js"></script>
+    <script src="/js/toastr.min.js" type="text/javascript"></script>
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
@@ -118,14 +120,12 @@
 </div>
 <!-- /main navbar -->
 
-
 <!-- Page content -->
 <div class="page-content">
 
     <!-- Main sidebar -->
     @include('layouts._sidebar')
     <!-- /main sidebar -->
-
 
     <!-- Main content -->
     <div class="content-wrapper">
@@ -159,6 +159,19 @@
 
 </div>
 <!-- /page content -->
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "showDuration": "500",
+        "hideDuration": "1000",
+        "timeOut": "5000"
+    };
+
+    @foreach (session('flash_notification', collect())->toArray() as $message)
+    toastr.{{$message['level']}}('{!! str_replace("'", '', $message['message']) !!}');
+    @endforeach
+</script>
 @yield('scripts')
 </body>
 </html>
