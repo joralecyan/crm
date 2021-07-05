@@ -90,6 +90,12 @@
                         <span>{{__('Positions')}}</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('projects.index')}}" class="nav-link @if(request()->is('projects*')) active @endif">
+                        <i class="icon-notebook"></i>
+                        <span>{{__('Projects')}}</span>
+                    </a>
+                </li>
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-cog"></i> <span>{{__('Settings')}}</span></a>
 

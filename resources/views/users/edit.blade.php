@@ -18,7 +18,8 @@
             <div class="card-body">
                 {!! Form::model($user, [
                              'method' => 'PATCH',
-                             'route' => [ "users.update", $user->id]
+                             'files' => true,
+                             'route' => [ 'users.update', $user->id]
                           ]) !!}
                 @include('users._form')
                 <div class="text-right">

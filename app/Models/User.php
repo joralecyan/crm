@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Imgable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,7 +12,7 @@ use Kyslik\ColumnSortable\Sortable;
 
 class User extends Authenticatable
 {
-    use Sortable, HasFactory, Notifiable;
+    use Sortable, HasFactory, Notifiable, Imgable;
 
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
@@ -31,6 +32,7 @@ class User extends Authenticatable
         'role',
         'position_id',
         'status',
+        'birth_date',
         'image'
     ];
 
@@ -52,6 +54,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @var string[]
+     */
+    protected $dates = ['birth_date'];
 
     /**
      * @return BelongsTo

@@ -50,7 +50,7 @@
                                         <a href="{{route('positions.show', $position->id)}}" class="list-icons-item text-primary-600"><i class="icon-eye"></i></a>
                                         <a href="{{route('positions.edit', $position->id)}}" class="list-icons-item text-success-600"><i class="icon-pencil7"></i></a>
                                         <a href="#" class="list-icons-item text-danger-600" onclick="$(this).next().submit()"><i class="icon-trash"></i></a>
-                                        <form action="{{route('positions.destroy', $position->id)}}" method="POST">
+                                        <form action="{{route('positions.destroy', $position->id)}}" method="POST" onsubmit="return confirm('{{__('Are You Sure?')}}')">
                                             @csrf
                                             @method('DELETE')
                                         </form>

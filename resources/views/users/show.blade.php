@@ -17,15 +17,22 @@
             </div>
 
             <div class="card-body">
-                <p><b>{{__('ID')}}:</b> {{$user->id}}</p>
-                <p><b>{{__('Name')}}:</b> {{$user->name}}</p>
-                <p><b>{{__('Email')}}:</b> {{$user->email}}</p>
-                <p><b>{{__('Phone')}}:</b> {{$user->phone}}</p>
-                <p><b>{{__('Position')}}:</b> {{$user->position->name ?? ''}}</p>
-                <p><b>{{__('Status')}}:</b> {{$user->status}}</p>
-                <p><b>{{__('Role')}}:</b> {{$user->role}}</p>
-                <p><b>{{__('Created At')}}:</b> {{$user->created_at}}</p>
-                <p><b>{{__('Updated At')}}:</b> {{$user->updated_at}}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><b>{{__('ID')}}:</b> {{$user->id}}</p>
+                        <p><b>{{__('Name')}}:</b> {{$user->name}}</p>
+                        <p><b>{{__('Email')}}:</b> {{$user->email}}</p>
+                        <p><b>{{__('Phone')}}:</b> {{$user->phone}}</p>
+                        <p><b>{{__('Position')}}:</b> {{$user->position->name ?? ''}}</p>
+                        <p><b>{{__('Status')}}:</b> {{$user->status}}</p>
+                        <p><b>{{__('Role')}}:</b> {{$user->role}}</p>
+                        <p><b>{{__('Created At')}}:</b> {{$user->created_at}}</p>
+                        <p><b>{{__('Updated At')}}:</b> {{$user->updated_at}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{$user->thumb}}" alt="{{$user->name}}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

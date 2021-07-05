@@ -1,13 +1,12 @@
-<div class="form-group ml-2">
-    <div class="input-group">
-        {!! Form::text($name, $value ?? null, ['id' => $name, 'class' => 'form-control']) !!}
-    </div>
+<div class="form-group">
+    {!! Form::label($name, __(ucfirst(str_replace('_', ' ', $name)))) !!}
+        {!! Form::text($name, $value ?? null, ['id' => $name, 'class' => 'form-control', 'placeholder' => __(ucfirst(str_replace('_', ' ', $name)))]) !!}
     {!! $errors->first($name, '<span class="form-text text-danger">:message</span>') !!}
 </div>
-<script src="/_dashboard/js/plugins/pickers/anytime.min.js"></script>
+
 <script>
 
-    $('#' + '{{$name}}').AnyTime_picker({
-        format: '%d-%m-%Y',
+    $('#' + '{{$name}}').datepicker({
+        format: 'dd.mm.yyyy',
     });
 </script>

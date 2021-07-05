@@ -16,7 +16,7 @@
             </div>
 
             <div class="card-body">
-                {!! Form::open(['route' => "positions.store"]) !!}
+                {!! Form::open(['route' => 'positions.store']) !!}
                 @include('positions._form')
                 <div class="text-right">
                     <button type="submit" class="btn btn-primary legitRipple">{{__('Add')}}<i class="icon-floppy-disk ml-2"></i></button>

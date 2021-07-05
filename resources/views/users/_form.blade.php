@@ -5,6 +5,8 @@
             @include('components.form._text', (['name' => 'name']))
             @include('components.form._email', (['name' => 'email']))
             @include('components.form._text', (['name' => 'phone']))
+            @include('components.form._date_picker', (['name' => 'birth_date', 'value' => isset($user) && $user->birth_date ? $user->birth_date->format('d.m.Y') : null]))
+            @include('components.form._file', (['name' => 'image', 'object' => $user ?? null]))
         </fieldset>
     </div>
     <div class="col-md-6">

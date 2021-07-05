@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth']], function (){
 
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('positions', App\Http\Controllers\PositionController::class);
+    Route::resource('projects', App\Http\Controllers\ProjectController::class);
 });
 
 

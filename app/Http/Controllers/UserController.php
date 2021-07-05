@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Mail\WelcomeMail;
 use App\Models\Position;
 use App\Models\User;
+use App\Services\FileService;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -45,6 +46,9 @@ class UserController extends Controller
         $password = str_random(8);
         $data['password'] = Hash::make($password);
         $user = User::create($data);
+        if ($request->file('image')){
+            (new FileService())->saveImage($request->file('image'), $user, 'users');
+        }
         Mail::to($user)->send(new WelcomeMail($user, $password));
         flash()->success(__('Employee created'));
         return response()->redirectToRoute('users.index');
@@ -84,6 +88,9 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user)
     {
         $user->update($request->all());
+        if ($request->file('image')){
+            (new FileService())->saveImage($request->file('image'), $user, 'users');
+        }
         flash()->success(__('Employee updated'));
         return response()->redirectToRoute('users.index');
     }

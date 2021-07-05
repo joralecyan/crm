@@ -18,6 +18,7 @@
     <link href="/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="/css/colors.min.css" rel="stylesheet" type="text/css">
     <link href="/css/toastr.min.css" rel="stylesheet">
+    <link href="/css/datepicker.min.css" rel="stylesheet">
     <!-- /global stylesheets -->
     @yield('head')
     <!-- Core JS files -->
@@ -26,6 +27,7 @@
     <script src="/js/blockui.min.js"></script>
     <script src="/js/ripple.min.js"></script>
     <script src="/js/toastr.min.js" type="text/javascript"></script>
+    <script src="/js/datepicker.min.js" type="text/javascript"></script>
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
