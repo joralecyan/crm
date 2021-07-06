@@ -18,6 +18,8 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function (){
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::get('/calendar', [App\Http\Controllers\CalendarController::class, 'index'])->name('calendar.index');
+
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('positions', App\Http\Controllers\PositionController::class);
     Route::resource('projects', App\Http\Controllers\ProjectController::class);

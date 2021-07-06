@@ -96,6 +96,12 @@
                         <span>{{__('Projects')}}</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('calendar.index')}}" class="nav-link @if(request()->is('calendar*')) active @endif">
+                        <i class="icon-calendar"></i>
+                        <span>{{__('Calendar')}}</span>
+                    </a>
+                </li>
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-cog"></i> <span>{{__('Settings')}}</span></a>
 
