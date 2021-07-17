@@ -162,6 +162,18 @@
 </div>
 <!-- /page content -->
 <script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    });
+    $('.j-return').click(function ()
+    {
+        window.history.back();
+    })
+
     toastr.options = {
         "closeButton": true,
         "progressBar": true,

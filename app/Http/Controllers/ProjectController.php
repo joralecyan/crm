@@ -56,7 +56,11 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return response()->view('projects.show', compact('project'));
+        $projects = Project::all();
+        $boards = $project->boards()->with(['tasks' => function ($q) {
+            return $q->orderBy('order', 'asc');
+        }])->orderBy('order', 'asc')->get();
+        return response()->view('projects.show', compact('project', 'projects', 'boards'));
     }
 
     /**

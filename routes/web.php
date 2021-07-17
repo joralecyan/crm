@@ -23,6 +23,16 @@ Route::group(['middleware' => ['auth']], function (){
     Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('positions', App\Http\Controllers\PositionController::class);
     Route::resource('projects', App\Http\Controllers\ProjectController::class);
+
+    Route::get('/boards/{id}',  [App\Http\Controllers\BoardController::class, 'boards'])->name('boards.get');
+    Route::post('/boards/{id}/sort',  [App\Http\Controllers\BoardController::class, 'sort'])->name('boards.sort');
+    Route::post('/boards/{id}',  [App\Http\Controllers\BoardController::class, 'store'])->name('boards.store');
+    Route::post('/boards/{id}/update',  [App\Http\Controllers\BoardController::class, 'update'])->name('boards.update');
+    Route::post('/boards/{id}/destroy',  [App\Http\Controllers\BoardController::class, 'destroy'])->name('boards.destroy');
+
+    Route::post('/tasks/{id}/sort',  [App\Http\Controllers\TaskController::class, 'sort'])->name('tasks.sort');
+    Route::post('/tasks',  [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');
+
 });
 
 

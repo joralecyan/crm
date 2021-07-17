@@ -2,40 +2,38 @@
 
 namespace App\Models;
 
-use App\Traits\Imgable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Kyslik\ColumnSortable\Sortable;
 
-class Project extends Model
+class Board extends Model
 {
-    use Sortable, HasFactory, Imgable;
+    use HasFactory;
 
     /**
      * @var string
      */
-    protected $table = 'projects';
+    protected $table = 'boards';
 
     /**
      * @var string[]
      */
-    protected $fillable = ['user_id', 'name', 'description', 'image'];
+    protected $fillable = ['project_id', 'name', 'order'];
 
     /**
      * @return BelongsTo
      */
-    public function user() : BelongsTo
+    public function project() :BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Project::class);
     }
 
     /**
      * @return HasMany
      */
-    public function boards() : HasMany
+    public function tasks() : HasMany
     {
-        return $this->hasMany(Board::class);
+        return $this->hasMany(Task::class);
     }
 }

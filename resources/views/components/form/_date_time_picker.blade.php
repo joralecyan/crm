@@ -8,7 +8,7 @@
     </div>
     {!! $errors->first($name, '<span class="form-text text-danger">:message</span>') !!}
 </div>
-<script src="/_dashboard/js/plugins/pickers/anytime.min.js"></script>
+<script src="/js/plugins/pickers/anytime.min.js"></script>
 <script>
 
     $('#' + '{{$name}}').AnyTime_picker({
